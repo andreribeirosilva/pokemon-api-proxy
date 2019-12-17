@@ -1,5 +1,9 @@
 const { ApolloServer } = require("apollo-server");
 const Query = require("./resolvers/Query");
+const Type = require("./resolvers/Type");
+const Stat = require("./resolvers/Stat");
+const Ability = require("./resolvers/Ability");
+const Pokemon = require("./resolvers/Pokemon");
 const typeDefs = require("./schema");
 const PokemonAPI = require("./datasources/pokemon");
 
@@ -12,7 +16,11 @@ const server = new ApolloServer({
   typeDefs,
   dataSources,
   resolvers: {
-    Query
+    Query,
+    Pokemon,
+    Type,
+    Ability,
+    Stat
   }
 });
 

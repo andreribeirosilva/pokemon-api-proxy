@@ -1,12 +1,16 @@
 const { RESTDataSource } = require("apollo-datasource-rest");
-const { normalizePokemon } = require("./utils");
-
-const BASE_URL = "https://pokeapi.co/api/v2/";
+const { normalizePokemon, stripBaseUrl, BASE_URL } = require("./utils");
 
 class PokemonAPI extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = BASE_URL;
+  }
+
+  async getDataByURL(url) {
+    const response = await this.get(stripBaseUrl(url));
+
+    return response;
   }
 
   async getPokemons({ pageSize = 20, page = 1 }) {
