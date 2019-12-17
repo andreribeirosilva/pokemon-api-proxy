@@ -1,0 +1,14 @@
+{
+  "name": "pokemon-api-proxy",
+  "version": "1.0.0",
+  "description": "GraphQL Pokemon API Proxy ",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.6.9",
+    "apollo-server": "^2.9.13",
+    "nodemon": "^2.0.2"
+  }
+}
